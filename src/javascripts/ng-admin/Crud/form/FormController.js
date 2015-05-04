@@ -3,7 +3,7 @@
 define(function () {
     'use strict';
 
-    var FormController = function ($scope, $state, CreateQueries, UpdateQueries, Validator, Configuration,
+    var FormController = function ($scope, $state, $stateParams, CreateQueries, UpdateQueries, Validator, Configuration,
                                    progression, notification, view, entry) {
 
         this.$scope = $scope;
@@ -20,6 +20,7 @@ define(function () {
         this.config = Configuration();
         this.view = view;
         this.entity = this.view.getEntity();
+
         this.$scope.entry = entry;
         this.$scope.view = view;
         this.$scope.entity = this.entity;
@@ -127,7 +128,7 @@ define(function () {
         this.entity = undefined;
     };
 
-    FormController.$inject = ['$scope', '$state', 'CreateQueries', 'UpdateQueries', 'Validator', 'NgAdminConfiguration', 'progression', 'notification', 'view', 'entry'];
+    FormController.$inject = ['$scope', '$state', '$stateParams', 'CreateQueries', 'UpdateQueries', 'Validator', 'NgAdminConfiguration', 'progression', 'notification', 'view', 'entry'];
 
     return FormController;
 });
